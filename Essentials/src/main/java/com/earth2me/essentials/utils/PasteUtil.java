@@ -19,8 +19,8 @@ import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
 public final class PasteUtil {
-    private static final String PASTE_URL = "https://paste.gg/";
-    private static final String PASTE_UPLOAD_URL = "https://api.paste.gg/v1/pastes";
+    private static final String PASTE_URL = "https://pastebin.ev1dent.dev/";
+    private static final String PASTE_UPLOAD_URL = String.format("%s/api/v1/pastes", PASTE_URL);
     private static final ExecutorService PASTE_EXECUTOR_SERVICE = Executors.newSingleThreadExecutor();
     private static final Gson GSON = new Gson();
 
@@ -122,6 +122,11 @@ public final class PasteUtil {
         public String getPasteId() {
             return pasteId;
         }
+
+    }
+
+    public static String getDumpURL(){
+        return "https://essdump.ev1dent.dev/dump.html?id=";
     }
 
 }
